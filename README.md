@@ -14,6 +14,21 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 ```js
 grunt.loadNpmTasks('grunt-semantic-ui');
 ```
+## SF - Proposed Changes
+```js
+'semantic-ui': {
+    all: {
+        options: {
+            semantic: 'path/to/semantic/dir',
+            theme: 'site/theme.config'
+        },
+        files: [
+            {src: ['site/overides/*less'], dest: 'dest/semantic.css'},
+            {src: ['site/overides/*.js'], dest: 'dest/semantic.js'},
+      ],
+    }
+}
+```
 
 ## Usage
 The grunt-semantic-ui task works by parsing a json encoded configuration file, where you declare which parts of semantic-ui you want to use. This configuration is read, and the generated css, js and asset files are copied to the provided destination. As a minimum, you must provide a configuration file, and a destination:  
